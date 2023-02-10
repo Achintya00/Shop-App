@@ -1,7 +1,7 @@
 .navbar {
   justify-content: space-between;
 }
-.nav-links a {
+.navbar a {
   color: white;
   text-decoration: none;
   padding-right: 30px;
