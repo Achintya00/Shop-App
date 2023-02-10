@@ -1,3 +1,4 @@
+import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { AddProductsComponent } from './Components/add-products/add-products.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'product', component: ProductsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({
