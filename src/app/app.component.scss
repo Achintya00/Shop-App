@@ -3,20 +3,17 @@
   display: flex;
   flex-wrap: wrap;
 }
-
 .nav-links {
   display: flex;
   flex: 1 1 auto;
   justify-content: flex-end;
 }
-
 .nav-links a {
   padding-right: 3rem;
   color: white;
   text-decoration: none;
 }
-
 .shop {
   display: flex;
   flex: 5 1 auto;
-}/*# sourceMappingURL=app.component.css.map */
+}
