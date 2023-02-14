@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -11,6 +12,7 @@ const MaterialComponents = [
   MatCardModule,
   MatFormFieldModule,
   MatProgressSpinnerModule,
+  MatSlideToggleModule,
 ];
 @NgModule({
   imports: [MaterialComponents],

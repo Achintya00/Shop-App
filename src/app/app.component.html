@@ -1,11 +1,14 @@
-<mat-toolbar color="primary" class="navbar">
-  <div class="shop" routerLink="home">Shopping App</div>
-  <div class="nav-links">
-    <a routerLink="home" color="accent">Home</a>
-    <a routerLink="login" color="accent">Login</a>
-    <a routerLink="product" color="accent">Products</a>
-    <a routerLink="register" color="accent">Register</a>
+<div [ngClass]="isDark?'dark':'light'">
+  <mat-toolbar color="primary" class="navbar">
+    <div class="shop" routerLink="home">Shopping App</div>
+    <div class="nav-links">
+      <a routerLink="home" color="accent">Home</a>
+      <a routerLink="login" color="accent">Login</a>
+      <a routerLink="product" color="accent">Products</a>
+      <a routerLink="register" color="accent">Register</a>
+      <mat-slide-toggle color="accent" (change)="darkMode($event)">Dark Mode</mat-slide-toggle>
 
-  </div>
-</mat-toolbar>
-<app-home></app-home>
+    </div>
+  </mat-toolbar>
+  <app-home></app-home>
+</div>
