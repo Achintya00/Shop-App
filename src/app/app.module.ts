@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
+import { ProductDetailComponent } from './Components/products/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MaterialModule } from './material/material.module';
     RegisterComponent,
     LoginComponent,
     ErrorPageComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

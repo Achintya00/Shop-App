@@ -7,9 +7,14 @@ import { shareReplay } from 'rxjs';
 })
 export class ProductDetailsService {
   constructor(private http: HttpClient) {}
-  body: any;
-  getProducts$ = this.http.get<any>('/api/ProductDetails').pipe(shareReplay(1));
+  body: boolean = false;
+  getProducts() {
+    return this.http.get<any>('/api/ProductDetails');
+  }
   postRegister(user: any) {
     this.http.post('/app/RegisterUsers', user);
+  }
+  getProductbyId(id: any) {
+    return this.http.get(`/api/ProductDetails/${id}`);
   }
 }

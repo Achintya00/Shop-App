@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './Components/products/product-detail/product-detail.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -13,11 +14,14 @@ const routes: Routes = [
   { path: 'product', component: ProductsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'product/:id', component: ProductDetailComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
