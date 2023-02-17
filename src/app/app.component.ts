@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     } else if (!event.checked) {
       this.isDark = false;
     }
-    console.log(this.isDark);
+
     localStorage.setItem('dark', JSON.stringify(this.isDark));
     this.mode();
   }
