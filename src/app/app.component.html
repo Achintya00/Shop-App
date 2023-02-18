@@ -6,7 +6,7 @@
       <a routerLink="login" color="accent">Login</a>
       <a routerLink="product" color="accent">Products</a>
       <a routerLink="register" color="accent">Register</a>
-      <mat-slide-toggle color="accent" (change)="darkMode($event)">Dark Mode</mat-slide-toggle>
+      <mat-slide-toggle color="accent" (change)="darkMode($event)" [checked]="Idark">Dark Mode</mat-slide-toggle>
 
     </div>
   </mat-toolbar>
