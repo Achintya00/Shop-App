@@ -14,7 +14,7 @@ export class RegisterComponent {
     firstName: '',
     lastName: '',
     city: '',
-    age: 0,
+    age: undefined,
     username: '',
     password: '',
   };
