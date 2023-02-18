@@ -11,4 +11,7 @@
     </div>
   </mat-toolbar>
   <app-home></app-home>
+  <button class="scrollTop" (click)="scrollTop()" [ngClass]="{'default':isScrolled}">
+    <mat-icon class="mat-18">keyboard_arrow_up</mat-icon>
+  </button>
 </div>

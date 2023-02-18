@@ -8,14 +8,18 @@
   display: flex;
   flex: 1 1 auto;
   justify-content: flex-end;
-  font-weight: normal;
   font-size: 1.1rem;
 }
-
 .nav-links a {
+  font-weight: normal;
   padding-right: 3rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.884);
   text-decoration: none;
+  transition: 0.3s all ease-out;
+}
+.nav-links a:hover {
+  color: #424242;
+  transition: 0.3s all ease-in;
 }
 
 .shop {
@@ -29,13 +33,35 @@
   width: 100%;
   min-height: 100vh;
   transition: 0.4s ease-in;
-  color: white;
+  color: #fff;
 }
 
 .light {
-  background-color: white;
+  background-color: #fff;
   width: 100%;
   min-height: 100vh;
   transition: 0.4s ease-out;
   color: black;
+}
+
+.scrollTop {
+  background-color: #c2185b;
+  color: #fff;
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  right: 0;
+  margin: 0 8px 12px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 0;
+  transition: 0.4s all ease-out;
+}
+
+.default {
+  opacity: 1;
+  transition: 0.4s all ease-in;
 }/*# sourceMappingURL=app.component.css.map */

@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  isScrolled = false;
   isDark?: boolean;
   title = 'shop-app';
   Idark?: boolean;
   ngOnInit(): void {
     this.mode();
+    window.addEventListener('scroll', () => {
+      this.isScrolled = window.pageYOffset !== 0;
+    });
   }
   darkMode(event: any) {
     console.log(event);
@@ -28,5 +32,12 @@ export class AppComponent implements OnInit {
   }
   getMode() {
     return JSON.parse(localStorage.getItem('dark')!) || this.isDark;
+  }
+  scrollTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }
