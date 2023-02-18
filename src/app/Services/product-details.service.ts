@@ -12,7 +12,7 @@ export class ProductDetailsService {
     return this.http.get<any>('/api/ProductDetails');
   }
   postRegister(user: any) {
-    this.http.post('/app/RegisterUsers', user);
+    return this.http.post('/api/RegisterUsers', user);
   }
   getProductbyId(id: any) {
     return this.http.get(`/api/ProductDetails/${id}`);

@@ -4,39 +4,39 @@
       <div class="example-container">
         <mat-form-field appearance="fill" class="width-50">
           <mat-label>First Name</mat-label>
-          <input matInput>
+          <input [(ngModel)]="ad.firstName" type="text" name="firstName" matInput placeholder="Enter Your Firstname">
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="width-50 ml-2">
           <mat-label>Last name</mat-label>
-          <input matInput>
+          <input [(ngModel)]="ad.lastName" name="lastName" type="text" matInput placeholder="Enter your Lastname">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>City</mat-label>
-          <input type="text" matInput placeholder="Enter your City">
+          <input [(ngModel)]="ad.city" name="city" type="text" matInput placeholder="Enter your City">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Age</mat-label>
-          <input type="number" matInput placeholder="Age">
+          <input [(ngModel)]="ad.age" name="age" type="number" matInput placeholder="Age">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Username</mat-label>
-          <input matInput placeholder="Enter your username">
+          <input [(ngModel)]="ad.username" name="username" matInput placeholder="Enter your username">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Enter password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          <input [(ngModel)]="ad.password" name="password" matInput [type]=" hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)=" hide=!hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
 
-        <button mat-raised-button color="primary">Submit</button>
+        <button (click)="postData()" mat-raised-button color="primary">Submit</button>
 
       </div>
     </mat-grid-tile>
