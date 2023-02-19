@@ -24,7 +24,7 @@
         <br>
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Age</mat-label>
-          <input required [(ngModel)]="ad.age" name="age" type="number" matInput placeholder="Age">
+          <input min="1" max="100" required [(ngModel)]="ad.age" name="age" type="number" matInput placeholder="Age">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="width-100">
