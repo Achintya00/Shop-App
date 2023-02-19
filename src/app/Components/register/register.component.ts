@@ -15,17 +15,11 @@ import {
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit, AfterViewInit {
-  @ViewChild('registerForm')
-  registerForm: any;
-  //@ViewChild('inputFeild', { read: ElementRef }) inputFeild: any;
-  ngAfterViewInit(): void {
-    // if (this.inputFeild.nativeElement.value === '') {
-    //   this.sol = false;
-    //   console.log(this.sol);
-    // }
-    console.log(this.registerForm.form.errors?.['maxlength']);
-  }
+  // @ViewChild('registerForm')
+  // registerForm: any;
+  ngAfterViewInit(): void {}
   hide = true;
+  //default data for forms
   ad: user = {
     firstName: '',
     lastName: '',
@@ -36,10 +30,16 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   };
   ngOnInit(): void {}
   constructor(private register: ProductDetailsService) {}
-  postData() {
+
+  //posting the data to backend
+  postData(registerForm: NgForm) {
     console.log(this.ad);
     this.register.postRegister(this.ad).subscribe((data) => {
-      console.log(data);
+      registerForm.reset();
     });
+  }
+  //default behavior was occuring when clicking on eye button in material form
+  hideBtn(e: Event) {
+    e.preventDefault();
   }
 }

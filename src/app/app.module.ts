@@ -13,6 +13,7 @@ import { ErrorPageComponent } from './Components/error-page/error-page.component
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { ProductDetailComponent } from './Components/products/product-detail/product-detail.component';
+import { EmailValidationDirective } from './Directives/email-validation.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProductDetailComponent } from './Components/products/product-detail/pro
     LoginComponent,
     ErrorPageComponent,
     ProductDetailComponent,
+    EmailValidationDirective,
   ],
   imports: [
     BrowserModule,

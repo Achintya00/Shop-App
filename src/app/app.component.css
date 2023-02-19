@@ -15,11 +15,11 @@
   padding-right: 3rem;
   color: rgba(255, 255, 255, 0.884);
   text-decoration: none;
-  transition: 0.3s all ease-out;
+  transition: 0.2s all ease-out;
 }
 .nav-links a:hover {
   color: #424242;
-  transition: 0.3s all ease-in;
+  transition: 0.2s all ease-in;
 }
 
 .shop {
