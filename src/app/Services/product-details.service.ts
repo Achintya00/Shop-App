@@ -8,6 +8,7 @@ import { shareReplay } from 'rxjs';
 export class ProductDetailsService {
   constructor(private http: HttpClient) {}
   body: boolean = false;
+  getLoginDetails$ = this.http.get('/api/Logins');
   getProducts() {
     return this.http.get<any>('/api/ProductDetails');
   }
