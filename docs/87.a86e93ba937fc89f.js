@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkshop_app=self.webpackChunkshop_app||[]).push([[87],{87:(l,u,o)=>{o.r(u),o.d(u,{AddProductModule:()=>d});var a=o(895),n=o(650);class d{}d.\u0275fac=function(s){return new(s||d)},d.\u0275mod=n.oAB({type:d}),d.\u0275inj=n.cJS({imports:[a.ez]})}}]);
