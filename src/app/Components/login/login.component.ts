@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ProductDetailsService } from 'src/app/Services/product-details.service';
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
   //getting the data from login api and validating
-  constructor(private login: ProductDetailsService) {}
+  constructor(private login: ProductDetailsService, private route: Router) {}
   ngOnInit(): void {
     this.login.getLoginDetails$.subscribe((data) => {
       this.loginDetails = data;
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
         element.username === this.username &&
         element.password === this.password
       ) {
-        alert('login Successful');
+        this.route.navigateByUrl('');
       } else {
         alert('login Failed');
       }
