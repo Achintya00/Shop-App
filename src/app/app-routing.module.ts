@@ -11,10 +11,12 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+
   { path: 'product', component: ProductsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'product/:id', component: ProductDetailComponent },
+  { path: 'addProduct', loadChildren: () => import('./Components/add-products/add-product.module').then(m => m.AddProductModule) },
   { path: '**', component: ErrorPageComponent },
 ];
 

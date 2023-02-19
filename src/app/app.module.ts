@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ProductsComponent } from './Components/products/products.component';
-import { AddProductsComponent } from './Components/add-products/add-products.component';
+// import { AddProductsComponent } from './Components/add-products/add-products.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +20,7 @@ import { EmailValidationDirective } from './Directives/email-validation.directiv
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    AddProductsComponent,
+    // AddProductsComponent,
     RegisterComponent,
     LoginComponent,
     ErrorPageComponent,
