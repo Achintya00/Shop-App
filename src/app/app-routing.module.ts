@@ -2,7 +2,7 @@ import { ProductDetailComponent } from './Components/products/product-detail/pro
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { AddProductsComponent } from './Components/add-products/add-products.component';
+
 import { ProductsComponent } from './Components/products/products.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -16,7 +16,13 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'product/:id', component: ProductDetailComponent },
-  { path: 'addProduct', loadChildren: () => import('./Components/add-products/add-product.module').then(m => m.AddProductModule) },
+  {
+    path: 'addProduct',
+    loadChildren: () =>
+      import('./Components/add-products/add-product.module').then(
+        (m) => m.AddProductModule
+      ),
+  },
   { path: '**', component: ErrorPageComponent },
 ];
 
