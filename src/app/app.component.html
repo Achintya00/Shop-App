@@ -1,17 +1,23 @@
-<div [ngClass]="Idark?'dark':'light'">
-  <mat-toolbar color="primary" class="navbar">
-    <div class="shop" routerLink="home">Shopping App</div>
-    <div class="nav-links">
-      <a routerLink="home" color="accent">Home</a>
-      <a routerLink="login" color="accent">Login</a>
-      <a routerLink="product" color="accent">Products</a>
-      <a routerLink="register" color="accent">Register</a>
-      <mat-slide-toggle color="accent" (change)="darkMode($event)" [checked]="Idark">Dark Mode</mat-slide-toggle>
+<mat-toolbar color="primary" class="navbar">
+  <div class="shop" routerLink="home">Shopping App</div>
+  <div class="nav-links">
+    <a routerLink="home" color="accent">Home</a>
+    <a routerLink="login" color="accent">Login</a>
+    <a routerLink="product" color="accent">Products</a>
+    <a routerLink="register" color="accent">Register</a>
+    <mat-slide-toggle color="accent" (change)="darkMode($event)" [checked]="Idark">Dark Mode</mat-slide-toggle>
 
-    </div>
-  </mat-toolbar>
+  </div>
+</mat-toolbar>
+<div *ngIf="!load else loader" [ngClass]="Idark?'dark':'light'">
+
   <app-home></app-home>
   <button class="scrollTop" (click)="scrollTop()" [ngClass]="{'default':isScrolled}">
     <mat-icon class="mat-18">keyboard_arrow_up</mat-icon>
   </button>
 </div>
+<ng-template #loader>
+  <div class="loader" [ngClass]="Idark?'dark':'light'">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
