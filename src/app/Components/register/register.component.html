@@ -1,50 +1,122 @@
-<form #registerForm="ngForm" class="form-container" (ngSubmit)="postData(registerForm)">
+<form
+  #registerForm="ngForm"
+  class="form-container"
+  (ngSubmit)="postData(registerForm)"
+>
   <mat-grid-list cols="1" rowHeight="100vh">
     <mat-grid-tile>
       <div class="example-container">
-        <mat-form-field hintLabel="Max 20 characters" appearance="fill" class="width-50">
+        <mat-form-field
+          hintLabel="Max 20 characters"
+          appearance="fill"
+          class="width-50"
+        >
           <mat-label>First Name</mat-label>
-          <input #fname minlength="3" maxlength="20" required [(ngModel)]="ad.firstName" type="text" name="firstName"
-            matInput placeholder="Enter Your Firstname" />
+          <input
+            #fname
+            minlength="3"
+            maxlength="20"
+            required
+            [(ngModel)]="ad.firstName"
+            type="text"
+            name="firstName"
+            matInput
+            placeholder="Enter Your Firstname"
+          />
           <mat-hint align="end">{{ fname.value.length }}/20</mat-hint>
         </mat-form-field>
 
-        <mat-form-field hintLabel="Max 20 characters" appearance="fill" class="width-50 ml-2">
+        <mat-form-field
+          hintLabel="Max 20 characters"
+          appearance="fill"
+          class="width-50 ml-2"
+        >
           <mat-label>Last name</mat-label>
-          <input #lname minlength="3" maxlength="20" required [(ngModel)]="ad.lastName" name="lastName" type="text"
-            matInput placeholder="Enter your Lastname" />
+          <input
+            #lname
+            minlength="3"
+            maxlength="20"
+            required
+            [(ngModel)]="ad.lastName"
+            name="lastName"
+            type="text"
+            matInput
+            placeholder="Enter your Lastname"
+          />
           <mat-hint align="end">{{ lname.value.length }}/20</mat-hint>
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>City</mat-label>
-          <input minlength="3" maxlength="20" required [(ngModel)]="ad.city" name="city" type="text" matInput
-            placeholder="Enter your City" />
+          <input
+            minlength="3"
+            maxlength="20"
+            required
+            [(ngModel)]="ad.city"
+            name="city"
+            type="text"
+            matInput
+            placeholder="Enter your City"
+          />
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Age</mat-label>
-          <input min="1" max="100" required [(ngModel)]="ad.age" name="age" type="number" matInput placeholder="Age" />
+          <input
+            min="1"
+            max="100"
+            required
+            [(ngModel)]="ad.age"
+            name="age"
+            type="number"
+            matInput
+            placeholder="Age"
+          />
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Username</mat-label>
-          <input appEmailValidation #user="ngModel" required [(ngModel)]="ad.username" name="username" matInput
-            placeholder="Enter your username" />
-          <mat-hint *ngIf="registerForm.dirty && user.errors?.['invalidEmail']" class="hint" align="start">Please enter
-            a valid email
+          <input
+            appEmailValidation
+            #user="ngModel"
+            required
+            [(ngModel)]="ad.username"
+            name="username"
+            matInput
+            placeholder="Enter your username"
+          />
+          <mat-hint
+            *ngIf="registerForm.dirty && user.errors?.['invalidEmail']"
+            class="hint"
+            align="start"
+            >Please enter a valid email
           </mat-hint>
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Enter password</mat-label>
-          <input required [(ngModel)]="ad.password" name="password" matInput [type]="hide ? 'password' : 'text'" />
-          <button mat-icon-button matSuffix (click)="hide = !hide; hideBtn($event)" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          <input
+            required
+            [(ngModel)]="ad.password"
+            name="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide; hideBtn($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
         </mat-form-field>
-        <button [disabled]="registerForm.invalid" mat-raised-button color="primary">
+        <button
+          [disabled]="registerForm.invalid"
+          mat-raised-button
+          color="primary"
+        >
           Submit
         </button>
       </div>

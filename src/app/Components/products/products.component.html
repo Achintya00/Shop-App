@@ -1,21 +1,35 @@
 <div class="container">
   <div class="card-section">
-    <mat-card class="example-card" *ngFor="let data of productData;let i = index">
+    <mat-card
+      class="example-card"
+      *ngFor="let data of productData; let i = index"
+    >
       <mat-card-header>
-        <img mat-card-avatar src="/assets/Images/img{{i}}.png">
-        <mat-card-title>{{data.pName}}</mat-card-title>
-        <mat-card-subtitle>{{data.pCategory}}</mat-card-subtitle>
+        <img mat-card-avatar src="/assets/Images/img{{ i }}.png" />
+        <mat-card-title>{{ data.pName }}</mat-card-title>
+        <mat-card-subtitle>{{ data.pCategory }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="/assets/Images/img{{i}}.png" class="container-img" alt="Photo of a Shiba Inu">
+      <img
+        mat-card-image
+        src="/assets/Images/img{{ i }}.png"
+        class="container-img"
+        alt="Photo of a Shiba Inu"
+      />
       <mat-card-content class="card-content">
         <p>
-          {{data.pPrice|currency}}
+          {{ data.pPrice | currency }}
         </p>
       </mat-card-content>
       <mat-card-actions>
         <button class="addBtn" mat-raised-button color="primary">Add</button>
-        <button mat-raised-button color="warn" [routerLink]="['/product',data.pId]"
-          [queryParams]="{parentData:data}">Buy</button>
+        <button
+          mat-raised-button
+          color="warn"
+          [routerLink]="['/product', data.pId]"
+          [queryParams]="{ parentData: data }"
+        >
+          Buy
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

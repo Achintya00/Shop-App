@@ -28,10 +28,10 @@
 
 .example-card img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .container-img {
   width: 300px;
   height: 300px;
-}/*# sourceMappingURL=products.component.css.map */
+} /*# sourceMappingURL=products.component.css.map */

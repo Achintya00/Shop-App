@@ -1,25 +1,54 @@
-<form #loginForm="ngForm" class="form-container" (ngSubmit)="loginMessage(loginForm)">
+<form
+  #loginForm="ngForm"
+  class="form-container"
+  (ngSubmit)="loginMessage(loginForm)"
+>
   <mat-grid-list cols="1" rowHeight="100vh">
     <mat-grid-tile>
       <div class="example-container">
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Username</mat-label>
-          <input appEmailValidation #user="ngModel" required [(ngModel)]="username" name="username" matInput
-            placeholder="Enter your username" />
-          <mat-hint *ngIf="loginForm.dirty && user.errors?.['invalidEmail']" class="hint" align="start">Please enter
-            a valid username
+          <input
+            appEmailValidation
+            #user="ngModel"
+            required
+            [(ngModel)]="username"
+            name="username"
+            matInput
+            placeholder="Enter your username"
+          />
+          <mat-hint
+            *ngIf="loginForm.dirty && user.errors?.['invalidEmail']"
+            class="hint"
+            align="start"
+            >Please enter a valid username
           </mat-hint>
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill" class="width-100">
           <mat-label>Enter password</mat-label>
-          <input required [(ngModel)]="password" name="password" matInput [type]="hide ? 'password' : 'text'" />
-          <button mat-icon-button matSuffix (click)="hide = !hide; hideBtn($event)" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          <input
+            required
+            [(ngModel)]="password"
+            name="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide; hideBtn($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
         </mat-form-field>
-        <button [disabled]="loginForm.invalid" mat-raised-button color="primary">
+        <button
+          [disabled]="loginForm.invalid"
+          mat-raised-button
+          color="primary"
+        >
           Submit
         </button>
       </div>
