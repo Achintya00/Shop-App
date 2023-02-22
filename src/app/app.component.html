@@ -1,11 +1,13 @@
 <mat-toolbar color="primary" class="navbar">
   <div class="shop" routerLink="home">Shopping App</div>
   <div class="nav-links">
-    <a routerLink="home" color="accent">Home</a>
-    <a *ngIf="!loginStatus" routerLink="login" color="accent">Login</a>
-    <a routerLink="product" color="accent">Products</a>
-    <a routerLink="register" color="accent">Register</a>
-    <a *ngIf="loginStatus" (click)="LogOut()" style="cursor:pointer;">Logout</a>
+    <a routerLink="home" routerLinkActive="active" color="accent">Home</a>
+    <a *ngIf="!loginStatus" routerLinkActive="active" routerLink="login" color="accent">Login</a>
+    <a routerLink="product" routerLinkActive="active" color="accent">Products</a>
+    <a routerLink="register" routerLinkActive="active" color="accent">Register</a>
+    <a *ngIf="loginStatus" routerLinkActive="active" routerLink="addProduct" color="accent">Add Product</a>
+    <a *ngIf="loginStatus" routerLinkActive="active" (click)="LogOut()" style="cursor:pointer;">Logout</a>
+
     <mat-slide-toggle color="accent" (change)="darkMode($event)" [checked]="Idark">Dark Mode</mat-slide-toggle>
   </div>
 </mat-toolbar>

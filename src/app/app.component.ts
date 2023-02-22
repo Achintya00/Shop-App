@@ -22,8 +22,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //loading functionality
 
-    this.loginStatus = this.login.getItem();
-
     this.route.events
       .pipe(filter((event) => event instanceof NavigationStart))
       .subscribe((data) => {
@@ -32,6 +30,7 @@ export class AppComponent implements OnInit {
     this.route.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((data) => {
+        this.loginStatus = this.login.getItem();
         setTimeout(() => {
           this.load = false;
         }, 800);
@@ -65,6 +64,7 @@ export class AppComponent implements OnInit {
   LogOut() {
     this.login.setItem(false);
     this.login.getItem();
+    this.route.navigate(['']);
   }
   //scrolltotop functionality
   scrollTop() {

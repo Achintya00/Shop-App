@@ -25,7 +25,7 @@ export class LoginGuard implements CanActivate, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.login.isLoggedin;
+    return this.login.getItem();
   }
   canLoad(
     route: Route,
@@ -35,6 +35,6 @@ export class LoginGuard implements CanActivate, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return true;
+    return this.login.getItem();
   }
 }
