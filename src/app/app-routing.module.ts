@@ -26,6 +26,7 @@ const routes: Routes = [
       ),
     // component: AddProductsComponent,
     canActivate: [LoginGuard],
+    canLoad: [LoginGuard],
   },
   { path: '**', component: ErrorPageComponent },
 ];
