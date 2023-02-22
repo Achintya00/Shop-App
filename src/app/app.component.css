@@ -74,4 +74,8 @@
   align-items: center;
   flex-wrap: wrap;
   transition: 0.4s all ease-out;
+}
+
+.active {
+  color: #424242 !important;
 }/*# sourceMappingURL=app.component.css.map */

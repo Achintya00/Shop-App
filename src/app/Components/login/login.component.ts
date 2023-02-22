@@ -1,3 +1,4 @@
+import { LoginServiceService } from './../../Services/login-service.service';
 import { NavigationStart, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -16,7 +17,11 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
   //getting the data from login api and validating
-  constructor(private login: ProductDetailsService, private route: Router) {}
+  constructor(
+    private login: ProductDetailsService,
+    private route: Router,
+    private loginService: LoginServiceService
+  ) {}
   ngOnInit(): void {
     this.login.getLoginDetails$.subscribe((data) => {
       this.loginDetails = data;
@@ -27,16 +32,7 @@ export class LoginComponent implements OnInit {
   }
   //simple authentication
   loginMessage(form: NgForm) {
-    this.loginDetails.forEach((element: any) => {
-      if (
-        element.username === this.username &&
-        element.password === this.password
-      ) {
-        this.route.navigateByUrl('');
-      } else {
-        alert('login Failed');
-      }
-    });
+    this.loginService.LogIn(this.username, this.password);
     form.resetForm();
   }
 }

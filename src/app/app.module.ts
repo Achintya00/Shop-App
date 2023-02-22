@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { ProductDetailComponent } from './Components/products/product-detail/product-detail.component';
 import { EmailValidationDirective } from './Directives/email-validation.directive';
+import { ProductDetailsService } from './Services/product-details.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { EmailValidationDirective } from './Directives/email-validation.directiv
     MaterialModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ProductDetailsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

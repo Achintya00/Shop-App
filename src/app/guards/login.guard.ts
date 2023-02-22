@@ -1,4 +1,6 @@
+import { LoginServiceService } from './../Services/login-service.service';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -14,6 +16,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginGuard implements CanActivate, CanLoad {
+  constructor(private login: LoginServiceService, private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -22,7 +25,7 @@ export class LoginGuard implements CanActivate, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return true;
+    return this.login.isLoggedin;
   }
   canLoad(
     route: Route,

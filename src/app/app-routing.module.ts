@@ -1,3 +1,4 @@
+import { AddProductsComponent } from './Components/add-products/add-products.component';
 import { LoginGuard } from './guards/login.guard';
 import { ProductDetailComponent } from './Components/products/product-detail/product-detail.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
       import('./Components/add-products/add-product.module').then(
         (m) => m.AddProductModule
       ),
+    // component: AddProductsComponent,
     canActivate: [LoginGuard],
   },
   { path: '**', component: ErrorPageComponent },

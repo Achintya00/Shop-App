@@ -1,3 +1,4 @@
+import { LoginServiceService } from './Services/login-service.service';
 import { filter } from 'rxjs';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,23 +16,25 @@ export class AppComponent implements OnInit {
   Idark?: boolean;
   load: boolean = false;
   end: any;
+  loginStatus: boolean = false;
 
-  constructor(private route: Router) {}
+  constructor(private route: Router, private login: LoginServiceService) {}
   ngOnInit(): void {
     //loading functionality
+
+    this.loginStatus = this.login.getItem();
+
     this.route.events
       .pipe(filter((event) => event instanceof NavigationStart))
       .subscribe((data) => {
         this.load = true;
-        console.log(data);
       });
     this.route.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((data) => {
         setTimeout(() => {
           this.load = false;
-          console.log(data);
-        }, 2000);
+        }, 800);
       });
 
     this.mode();
@@ -58,6 +61,10 @@ export class AppComponent implements OnInit {
   }
   getMode() {
     return JSON.parse(localStorage.getItem('dark')!) || this.isDark;
+  }
+  LogOut() {
+    this.login.setItem(false);
+    this.login.getItem();
   }
   //scrolltotop functionality
   scrollTop() {
