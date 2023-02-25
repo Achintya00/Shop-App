@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './../../material/material.module';
 import { AddProductsComponent } from './add-products.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,7 +12,12 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), MaterialModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MaterialModule,
+    FormsModule,
+  ],
   declarations: [AddProductsComponent],
 })
 export class AddProductModule {}
