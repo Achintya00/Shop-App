@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"add-products.component.css"}
+{"version":3,"sources":["add-products.component.scss","add-products.component.css"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;ACCF;ADAE;EACE,cAAA;ACEJ;;ADEA;EACE,kBAAA;ACCF","file":"add-products.component.css"}

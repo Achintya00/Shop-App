@@ -1,1 +1,34 @@
-<h1>Hello Everyone</h1>
+<div class="table-wrapper">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+    <ng-container matColumnDef="pId">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element;"> {{element.pId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="pName">
+      <th mat-header-cell *matHeaderCellDef>Name </th>
+      <td mat-cell *matCellDef="let element;"> {{element.pName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="pCategory">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let element;"> {{element.pCategory}} </td>
+    </ng-container>
+    <ng-container matColumnDef="pIsInStock">
+      <th mat-header-cell *matHeaderCellDef>Is Available</th>
+      <td mat-cell *matCellDef="let element;"> {{element.pIsInStock}} </td>
+    </ng-container>
+    <ng-container matColumnDef="pPrice">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let element;"> {{element.pPrice}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Edit">
+      <th mat-header-cell *matHeaderCellDef>Edit/Delete</th>
+      <td mat-cell *matCellDef="let element;"> <button class="editBtn" mat-raised-button color="warning">
+          Edit</button> <button mat-raised-button color="primary">Delete</button>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

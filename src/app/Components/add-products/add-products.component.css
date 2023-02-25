@@ -1,1 +1,15 @@
-/*# sourceMappingURL=add-products.component.css.map */
+.table-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 90vh;
+}
+.table-wrapper table {
+  min-width: 80%;
+}
+
+.editBtn {
+  margin-right: 10px;
+}/*# sourceMappingURL=add-products.component.css.map */

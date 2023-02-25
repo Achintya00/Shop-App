@@ -1,3 +1,4 @@
+import { MaterialModule } from './../../material/material.module';
 import { AddProductsComponent } from './add-products.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), MaterialModule],
   declarations: [AddProductsComponent],
 })
 export class AddProductModule {}

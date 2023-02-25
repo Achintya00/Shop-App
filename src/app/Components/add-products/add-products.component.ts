@@ -1,3 +1,4 @@
+import { ProductDetailsService } from 'src/app/Services/product-details.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-products.component.css'],
 })
 export class AddProductsComponent implements OnInit {
+  dataSource = [];
+  displayedColumns: string[] = [
+    'pCategory',
+    'pId',
+    'pIsInStock',
+    'pName',
+    'pPrice',
+    'Edit',
+  ];
+  constructor(private service: ProductDetailsService) {}
+
   ngOnInit(): void {
-    console.log('logged in successfully');
+    this.service.getProducts().subscribe((data) => {
+      this.dataSource = data;
+      console.log(this.dataSource);
+    });
   }
 }
